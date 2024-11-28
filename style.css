@@ -35,11 +35,11 @@ nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 5px 15px;
     position: relative;
 }
 
@@ -55,6 +55,7 @@ nav ul li a:hover {
 }
 
 nav .dropdown-content {
+    padding: 10px 0;
     display: none;
     position: absolute;
     background-color: #111111;
@@ -65,7 +66,7 @@ nav .dropdown-content {
 
 nav .dropdown-content a {
     color: white;
-    padding: 12px 16px;
+    padding: 10px 16px;
     text-decoration: none;
     display: block;
     font-size: 1rem;
@@ -207,33 +208,43 @@ footer a:hover {
     transition: background-color 0.3s;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* Ajustes para pantallas pequeñas (por ejemplo, móviles) */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Cambia a una disposición vertical */
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 5px 0; /* Reduce los márgenes entre los elementos */
-    }
-
-    nav ul li a {
-        font-size: 1rem; /* Ajusta el tamaño de fuente */
-    }
+#btn-comprar:hover {
+    background-color: #0056b3;
 }
 
 
-#btn-comprar:hover {
-    background-color: #0056b3;
+
+
+
+
+
+
+
+
+/* Solución específica para pantallas pequeñas */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Cambia a disposición vertical */
+        align-items: center;
+        gap: 10px; /* Añade separación entre los elementos */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Reduce el espaciado vertical */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Asegura un tamaño de fuente adecuado */
+    }
+
+    nav .dropdown-content {
+        position: static; /* Elimina posición absoluta en móviles */
+        box-shadow: none; /* Opcional: elimina la sombra en móviles */
+    }
+
+    nav .dropdown:hover .dropdown-content {
+        display: block;
+        width: 100%; /* Ocupa todo el ancho disponible */
+        text-align: center; /* Centra el texto */
+    }
 }
