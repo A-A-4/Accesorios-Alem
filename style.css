@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 16px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+nav .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+/* Contenedor de productos en cuadrícula */
+.productos-contenedor, 
+.celulares-contenedor, 
+.computadoras-contenedor, 
+.otros-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.producto {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.icono-carrito {
+    cursor: pointer;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+.icono-carrito:hover {
+    color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #0056b3;
+}
+
+/* Botón de WhatsApp flotante */
+.whatsapp-icon-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25d366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.whatsapp-icon-right img {
+    width: 40px;
+    height: 40px;
+}
+
+.whatsapp-icon-right:hover {
+    background-color: #20b856;
+}
+
+/* Botón de WhatsApp en el footer */
+.whatsapp-footer {
+    background-color: #25d366;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.whatsapp-footer:hover {
+    background-color: #20b856;
+}
+
+
+
+#btn-comprar {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btn-comprar:hover {
+    background-color: #0056b3;
+}
