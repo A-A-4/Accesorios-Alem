@@ -220,27 +220,34 @@ footer a:hover {
 
 
 
-/* Solución para pantallas pequeñas */
+/* Mantener elementos en línea en pantallas pequeñas */
 @media (max-width: 768px) {
     nav ul {
-        flex-wrap: wrap; /* Permite que los elementos ocupen una nueva línea si no caben */
-        justify-content: center; /* Centra los elementos */
+        display: flex; /* Fuerza que los elementos sean flexibles */
+        flex-wrap: nowrap; /* Evita que pasen a una nueva línea */
+        justify-content: space-around; /* Distribuye el espacio entre los elementos */
+        overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
     }
 
     nav ul li {
-        margin: 5px 10px; /* Reduce el margen para que quepan mejor */
+        margin: 0 5px; /* Reduce márgenes para optimizar espacio */
     }
 
     nav ul li a {
-        font-size: 0.8rem; /* Reduce ligeramente el tamaño del texto */
+        font-size: 0.9rem; /* Ajusta el tamaño de texto */
+        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
     }
 
     nav .dropdown-content {
-        position: absolute; /* Mantén el menú desplegable en su lugar */
-        min-width: 120px; /* Ajusta el ancho mínimo del desplegable */
+        position: absolute;
+        display: none; /* Oculta por defecto */
+        background-color: #111111;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
     }
 
     nav .dropdown:hover .dropdown-content {
-        display: block; /* Asegura que el menú desplegable se vea */
+        display: block; /* Muestra el menú desplegable al pasar el ratón */
     }
 }
