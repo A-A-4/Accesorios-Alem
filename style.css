@@ -35,7 +35,7 @@ nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    
 }
 
 nav ul li {
@@ -206,6 +206,33 @@ footer a:hover {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Ajustes para pantallas pequeñas (por ejemplo, móviles) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Cambia a una disposición vertical */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Reduce los márgenes entre los elementos */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Ajusta el tamaño de fuente */
+    }
+}
+
 
 #btn-comprar:hover {
     background-color: #0056b3;
