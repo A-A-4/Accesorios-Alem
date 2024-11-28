@@ -220,34 +220,33 @@ footer a:hover {
 
 
 
-/* Mantener elementos en línea en pantallas pequeñas */
 @media (max-width: 768px) {
     nav ul {
-        display: flex; /* Fuerza que los elementos sean flexibles */
-        flex-wrap: nowrap; /* Evita que pasen a una nueva línea */
-        justify-content: space-around; /* Distribuye el espacio entre los elementos */
-        overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos estén en columna */
+        align-items: center;
+        width: 100%;
     }
 
     nav ul li {
-        margin: 0 5px; /* Reduce márgenes para optimizar espacio */
-    }
-
-    nav ul li a {
-        font-size: 0.9rem; /* Ajusta el tamaño de texto */
-        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+        margin: 5px 0; /* Reducir el espacio entre los elementos */
     }
 
     nav .dropdown-content {
-        position: absolute;
-        display: none; /* Oculta por defecto */
-        background-color: #111111;
-        min-width: 160px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
+        position: relative;
+        width: 100%; /* Asegura que el menú ocupe el ancho completo */
+        display: none;
+        box-shadow: none;
     }
 
-    nav .dropdown:hover .dropdown-content {
-        display: block; /* Muestra el menú desplegable al pasar el ratón */
+    nav .dropdown.active .dropdown-content {
+        display: block; /* Mostrar el menú cuando se le da la clase 'active' */
+    }
+
+    nav .dropdown-content a {
+        font-size: 1.1rem;
+        padding: 10px;
+        text-align: center;
+        background-color: #333; /* Fondo más claro para los enlaces */
     }
 }
