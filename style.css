@@ -215,15 +215,11 @@ footer a:hover {
 
 
 
-
-
-
-
-
+/* Estilos específicos para pantallas pequeñas */
 @media (max-width: 768px) {
     nav ul {
         display: flex;
-        flex-direction: column; /* Asegura que los elementos estén en columna */
+        flex-direction: column; /* Los elementos estarán en columna en pantallas pequeñas */
         align-items: center;
         width: 100%;
     }
@@ -234,13 +230,13 @@ footer a:hover {
 
     nav .dropdown-content {
         position: relative;
-        width: 100%; /* Asegura que el menú ocupe el ancho completo */
-        display: none;
+        width: 100%; /* El submenú ocupará todo el ancho del contenedor */
+        display: none; /* Inicialmente oculto */
         box-shadow: none;
     }
 
     nav .dropdown.active .dropdown-content {
-        display: block; /* Mostrar el menú cuando se le da la clase 'active' */
+        display: block; /* Mostrar el menú cuando tenga la clase 'active' */
     }
 
     nav .dropdown-content a {
