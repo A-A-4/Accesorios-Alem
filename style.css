@@ -220,31 +220,27 @@ footer a:hover {
 
 
 
-
-/* Solución específica para pantallas pequeñas */
+/* Solución para pantallas pequeñas */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Cambia a disposición vertical */
-        align-items: center;
-        gap: 10px; /* Añade separación entre los elementos */
+        flex-wrap: wrap; /* Permite que los elementos ocupen una nueva línea si no caben */
+        justify-content: center; /* Centra los elementos */
     }
 
     nav ul li {
-        margin: 5px 0; /* Reduce el espaciado vertical */
+        margin: 5px 10px; /* Reduce el margen para que quepan mejor */
     }
 
     nav ul li a {
-        font-size: 1rem; /* Asegura un tamaño de fuente adecuado */
+        font-size: 0.8rem; /* Reduce ligeramente el tamaño del texto */
     }
 
     nav .dropdown-content {
-        position: static; /* Elimina posición absoluta en móviles */
-        box-shadow: none; /* Opcional: elimina la sombra en móviles */
+        position: absolute; /* Mantén el menú desplegable en su lugar */
+        min-width: 120px; /* Ajusta el ancho mínimo del desplegable */
     }
 
     nav .dropdown:hover .dropdown-content {
-        display: block;
-        width: 100%; /* Ocupa todo el ancho disponible */
-        text-align: center; /* Centra el texto */
+        display: block; /* Asegura que el menú desplegable se vea */
     }
 }
