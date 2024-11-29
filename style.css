@@ -100,8 +100,8 @@ section p {
 .computadoras-contenedor, 
 .otros-contenedor {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Tres columnas para pantallas grandes */
-    gap: 25px; /* Espacio entre los productos */
+    grid-template-columns: repeat(4, 1fr); /* cuantro columnas para pantallas grandes */
+    gap: 20px; /* Espacio entre los productos */
     margin: 10px 0;
     padding: 0 10px;
     max-width: 1200px; /* Limita el ancho máximo para evitar que se estire demasiado */
@@ -114,9 +114,9 @@ section p {
     flex-direction: column; /* Ordena los elementos verticalmente */
     align-items: center; /* Centra horizontalmente */
     justify-content: space-between; /* Distribuye el contenido uniformemente */
-    border: 3px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 10px;
     height: 350px; /* Altura uniforme para las tarjetas */
     box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
@@ -125,7 +125,7 @@ section p {
 }
 .producto p {
     font-size: 1rem;
-    color: #333;
+    color: #181818;
     margin: 5px 0;
     text-align: center;
 }
@@ -134,6 +134,7 @@ section p {
     height: auto; /* Mantiene la proporción de la imagen */
     object-fit: cover; /* Ajusta la imagen sin deformarla */
     max-height: 200px; /* Limita la altura de la imagen */
+    border-radius: 15px;
 }
 .producto .texto-overlay {
     position: absolute;
@@ -141,7 +142,7 @@ section p {
     left: 10px;
     right: 10px;
     background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para el texto */
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -159,7 +160,7 @@ section p {
 
 .producto i {
     font-size: 1.5rem;
-    color: #333;
+    color: #000000;
     cursor: pointer;
 }
 
@@ -226,24 +227,6 @@ footer a:hover {
 .whatsapp-footer:hover {
     background-color: #20b856;
 }
-
-
-
-#btn-comprar {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#btn-comprar:hover {
-    background-color: #0056b3;
-}
-
-
 
 
 /* Estilos específicos para pantallas pequeñas */
@@ -346,10 +329,22 @@ footer a:hover {
     border-radius: 8px; /* Bordes redondeados */
     margin-bottom: 20px; /* Espacio debajo del título */
 }
+#celulares{
 
+    text-align: center; /* Centra el texto dentro de la sección */
+    padding: 40px 20px; /* Espaciado alrededor del contenido */
+    background-color: #ffffff; 
+}
 
+#celulares h1 {
 
-
+    background-color: #ffffff; /* Fondo morado claro */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado dentro del fondo */
+    font-size: 3rem; /* Tamaño del texto */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
 
 
 
@@ -536,7 +531,8 @@ footer a:hover {
     width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor sin estirarse */
     height: auto; /* Mantiene la relación de aspecto de la imagen */
     object-fit: cover; /* Ajusta la imagen a su contenedor sin deformarla */
-    max-height: 250px; /* Limita la altura de la imagen para evitar que se haga demasiado grande */
+    max-height: 270px; /* Limita la altura de la imagen para evitar que se haga demasiado grande */
+    padding: 10px;
 }
 
 /* Ajustes para pantallas pequeñas */
@@ -555,3 +551,26 @@ footer a:hover {
         max-height: 150px; /* Limita aún más la altura de las imágenes en pantallas muy pequeñas */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
