@@ -100,36 +100,67 @@ section p {
 .computadoras-contenedor, 
 .otros-contenedor {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr); /* Tres columnas para pantallas grandes */
+    gap: 25px; /* Espacio entre los productos */
+    margin: 10px 0;
+    padding: 0 10px;
+    max-width: 1200px; /* Limita el ancho máximo para evitar que se estire demasiado */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .producto {
-    background-color: white;
-    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column; /* Ordena los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: space-between; /* Distribuye el contenido uniformemente */
+    border: 3px solid #ccc;
     border-radius: 10px;
-    padding: 20px;
+    background-color: #fff;
+    padding: 10px;
+    height: 350px; /* Altura uniforme para las tarjetas */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+    position: relative;
+    overflow: hidden;
+}
+.producto p {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .producto img {
-    max-width: 100%;
-    border-radius: 10px;
+    width: 100%; /* La imagen ocupa todo el ancho disponible en su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    max-height: 200px; /* Limita la altura de la imagen */
 }
-
-.icono-carrito {
-    cursor: pointer;
-    color: #007bff;
+.producto .texto-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para el texto */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 2; /* Asegura que el texto esté por encima de la imagen */
+}
+.producto .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 10px;
+    z-index: 1;
 }
 
-.icono-carrito:hover {
-    color: #0056b3;
+
+
+.producto i {
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
 }
 
 /* Footer */
@@ -244,5 +275,283 @@ footer a:hover {
         padding: 10px;
         text-align: center;
         background-color: #333; /* Fondo más claro para los enlaces */
+    }
+}
+
+
+
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .productos-contenedor,
+    .celulares-contenedor,
+    .computadoras-contenedor,
+    .otros-contenedor {
+        grid-template-columns: repeat(2, 1fr); /* Tres columnas en pantallas pequeñas también */
+    }
+}
+
+@media (max-width: 480px) {
+    .productos-contenedor,
+    .celulares-contenedor,
+    .computadoras-contenedor,
+    .otros-contenedor {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas muy pequeñas */
+    }
+}
+
+
+@media (max-width: 480px) {
+    footer p {
+        font-size: 0.8rem; /* Tamaño más pequeño para pantallas chicas */
+    }
+
+    footer a {
+        font-size: 0.8rem; /* Ajusta también el tamaño de los enlaces */
+    }
+}
+
+
+@media (max-width: 768px) {
+    footer p {
+        font-size: 0.8rem; /* Tamaño más pequeño para pantallas chicas */
+    }
+
+    footer a {
+        font-size: 0.8rem; /* Ajusta también el tamaño de los enlaces */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+#inicio {
+    text-align: center; /* Centra el texto dentro de la sección */
+    padding: 40px 20px; /* Espaciado alrededor del contenido */
+    background-color: #f0f0f0; /* Fondo gris claro para toda la sección */
+}
+
+#inicio h1 {
+    background-color: #a45ab3; /* Fondo morado claro */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado dentro del fondo */
+    font-size: 3rem; /* Tamaño del texto */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Texto en la sección de inicio */
+#inicio h1 {
+    font-size: 3rem; /* Tamaño predeterminado */
+}
+
+#inicio p {
+    font-size: 1.3rem; /* Tamaño predeterminado */
+}
+
+/* Texto en la sección de productos */
+#productos h2 {
+    font-size: 2.8rem; /* Tamaño predeterminado */
+}
+
+#productos p {
+    font-size: 1.3rem; /* Tamaño predeterminado */
+}
+
+/* Responsivo: Pantallas pequeñas (máximo 768px) */
+@media (max-width: 768px) {
+    #inicio h1 {
+        font-size: 2.2rem; /* Reducido para pantallas más pequeñas */
+    }
+
+    #inicio p {
+        font-size: 1.1rem; /* Reducido para pantallas más pequeñas */
+    }
+
+    #productos h2 {
+        font-size: 2rem; /* Reducido para pantallas más pequeñas */
+    }
+
+    #productos p {
+        font-size: 1.1rem; /* Reducido para pantallas más pequeñas */
+    }
+}
+
+/* Responsivo: Pantallas muy pequeñas (máximo 480px) */
+@media (max-width: 480px) {
+    #inicio h1 {
+        font-size: 1.8rem; /* Aún más pequeño en pantallas muy pequeñas */
+    }
+
+    #inicio p {
+        font-size: 0.9rem; /* Aún más pequeño en pantallas muy pequeñas */
+    }
+
+    #productos h2 {
+        font-size: 1.6rem; /* Aún más pequeño en pantallas muy pequeñas */
+    }
+
+    #productos p {
+        font-size: 0.9rem; /* Aún más pequeño en pantallas muy pequeñas */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#productos {
+    background-color: #000000; /* Fondo de color gris claro */
+    padding: 40px 20px; /* Espaciado interno */
+    text-align: center; /* Centrar el contenido */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+}
+
+#productos h2 {
+    font-size: 2.8rem;
+    color: #ffffff; /* Cambia el color del título */
+    margin-bottom: 20px;
+}
+
+#productos p {
+    font-size: 1.2rem;
+    color: #ffffff; /* Cambia el color del texto */
+    margin-top: 10px;
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+
+
+
+
+
+
+/* Ajustes para pantallas pequeñas (por debajo de 768px) */
+@media (max-width: 768px) {
+    #celulares h2,
+    #computadoras h2,
+    #otros h2 {
+        font-size: 2rem; /* Reducir el tamaño del título */
+    }
+
+    #celulares p,
+    #computadoras p,
+    #otros p {
+        font-size: 1rem; /* Reducir el tamaño del texto de descripción */
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas (por debajo de 480px) */
+@media (max-width: 480px) {
+    #celulares h2,
+    #computadoras h2,
+    #otros h2 {
+        font-size: 1.8rem; /* Aún más pequeño el título */
+    }
+
+    #celulares p,
+    #computadoras p,
+    #otros p {
+        font-size: 0.9rem; /* Aún más pequeño el texto de descripción */
+    }
+}
+
+
+
+
+
+
+/* Ajustar el texto de la sección productos en pantallas pequeñas */
+@media (max-width: 768px) {
+    #productos h2 {
+        font-size: 2rem; /* Aumentamos el tamaño del título "Nuestros Productos" */
+    }
+
+    #productos p {
+        font-size: 1.2rem; /* Ajustamos el tamaño del texto del párrafo */
+    }
+}
+
+@media (max-width: 480px) {
+    #productos h2 {
+        font-size: 1.5rem; /* Hacemos el título más pequeño en pantallas más pequeñas */
+    }
+
+    #productos p {
+        font-size: 1rem; /* Ajustamos el tamaño del texto en pantallas muy pequeñas */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Para las imágenes de los productos en las secciones celulares, computadoras y otros */
+#celulares img, #computadoras img, #otros img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor sin estirarse */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    object-fit: cover; /* Ajusta la imagen a su contenedor sin deformarla */
+    max-height: 250px; /* Limita la altura de la imagen para evitar que se haga demasiado grande */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    #celulares img, #computadoras img, #otros img {
+        width: 100%; /* Asegura que las imágenes se ajusten al 100% del contenedor */
+        height: auto; /* Mantiene la proporción correcta */
+        max-height: 200px; /* Reducimos la altura máxima de las imágenes en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    #celulares img, #computadoras img, #otros img {
+        width: 100%; /* Asegura que las imágenes se ajusten al 100% del contenedor */
+        height: auto; /* Mantiene la proporción correcta */
+        max-height: 150px; /* Limita aún más la altura de las imágenes en pantallas muy pequeñas */
     }
 }
