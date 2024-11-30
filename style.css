@@ -18,24 +18,50 @@ header {
     text-align: center;
 }
 
-header img {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    margin-bottom: 10px;
+.banner-container img {
+    display: block; /* Para que el margen se aplique correctamente */
+    margin-top: 1px; /* Ajusta este valor para mover la imagen hacia abajo */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+    max-width: 100%;
+    height: auto; /* Mantiene la relación de aspecto */
 }
 
+
+
+
 nav {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: black;
-    padding: 10px 0;
+    padding: 15px 20px;
+}
+
+nav .logo {
+    margin-right: auto; /* Alinea el logo a la izquierda */
+}
+
+
+nav .logo img {
+    height: 50px; /* Ajusta la altura del logo */
+    width: 50px;  /* Mantiene la proporción de la imagen */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
 }
 
 nav ul {
+    flex-grow: 1;
     list-style-type: none;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -52,6 +78,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #a45ab3;
+    
 }
 
 nav .dropdown-content {
@@ -65,6 +92,7 @@ nav .dropdown-content {
 }
 
 nav .dropdown-content a {
+
     color: white;
     padding: 10px 16px;
     text-decoration: none;
@@ -231,22 +259,31 @@ footer a:hover {
 
 /* Estilos específicos para pantallas pequeñas */
 @media (max-width: 768px) {
+
+    nav {
+        padding: 3px 10px; /* Reducir el espacio interno en pantallas pequeñas */
+    }
+
+
     nav ul {
         display: flex;
-        flex-direction: column; /* Los elementos estarán en columna en pantallas pequeñas */
+        flex-direction: row; /* Los elementos estarán en columna en pantallas pequeñas */
         align-items: center;
         width: 100%;
+        padding: 0;
     }
 
     nav ul li {
-        margin: 5px 0; /* Reducir el espacio entre los elementos */
+        margin: 5px 15px; /* Reducir el espacio entre los elementos */
     }
 
     nav .dropdown-content {
-        position: relative;
+        position: absolute;
         width: 100%; /* El submenú ocupará todo el ancho del contenedor */
         display: none; /* Inicialmente oculto */
         box-shadow: none;
+        min-width: 160px;
+        background-color: #333;
     }
 
     nav .dropdown.active .dropdown-content {
@@ -255,7 +292,7 @@ footer a:hover {
 
     nav .dropdown-content a {
         font-size: 1.1rem;
-        padding: 10px;
+        padding: 5px;
         text-align: center;
         background-color: #333; /* Fondo más claro para los enlaces */
     }
@@ -436,7 +473,7 @@ footer a:hover {
 
 
 #productos {
-    background-color: #000000; /* Fondo de color gris claro */
+    background-color: #a45ab3; /* Fondo de color gris claro */
     padding: 40px 20px; /* Espaciado interno */
     text-align: center; /* Centrar el contenido */
     border-radius: 10px; /* Bordes redondeados */
@@ -467,13 +504,13 @@ footer a:hover {
     #celulares h2,
     #computadoras h2,
     #otros h2 {
-        font-size: 2rem; /* Reducir el tamaño del título */
+        font-size: 1.8rem; /* Reducir el tamaño del título */
     }
 
     #celulares p,
     #computadoras p,
     #otros p {
-        font-size: 1rem; /* Reducir el tamaño del texto de descripción */
+        font-size: 0.9rem; /* Reducir el tamaño del texto de descripción */
     }
 }
 
