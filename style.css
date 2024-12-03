@@ -11,6 +11,7 @@ body {
     color: black;
 }
 
+
 header {
     background-color: black;
     color: white;
@@ -370,12 +371,11 @@ footer a:hover {
 
     text-align: center; /* Centra el texto dentro de la sección */
     padding: 40px 20px; /* Espaciado alrededor del contenido */
-    background-color: #ffffff; 
 }
 
 #celulares h1 {
 
-    background-color: #ffffff; /* Fondo morado claro */
+   
     color: white; /* Color del texto */
     padding: 20px; /* Espaciado dentro del fondo */
     font-size: 3rem; /* Tamaño del texto */
@@ -577,7 +577,7 @@ footer a:hover {
     #celulares img, #computadoras img, #otros img {
         width: 100%; /* Asegura que las imágenes se ajusten al 100% del contenedor */
         height: auto; /* Mantiene la proporción correcta */
-        max-height: 250px; /* Reducimos la altura máxima de las imágenes en pantallas más pequeñas */
+        max-height: 200px; /* Reducimos la altura máxima de las imágenes en pantallas más pequeñas */
     }
 }
 
@@ -592,6 +592,52 @@ footer a:hover {
 
 
 
+/* Estilo general de la imagen */
+.zoomable {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Elimina las herencias */
+    .zoomable.zoomed {
+        all: unset;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        max-width: 30vw; /* Ocupa hasta el 70% del ancho de la ventana */
+        max-height: 30vh;
+        object-fit: contain;
+        border-radius: 15px;
+        
+    }
+
+    /* Ocultar la cuadrícula cuando se amplía la imagen */
+.card, .image-container {
+    display: none; /* Ocultar la cuadrícula */
+}
+    
+    /* Imagen ampliada (pantallas pequeñas - celulares) */
+@media (max-width: 768px) {
+    .zoomable.zoomed {
+        max-width: 60vw; /* 80% del ancho del viewport */
+        max-height: 60vh; /* 80% del alto del viewport */
+    }
+}
+
+
+
+/* Fondo oscuro (cuando la imagen está ampliada) */
+body.dark-mode {
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo oscuro */
+    overflow: hidden; /* Evita que la página se desplace */
+}
 
 
 
@@ -609,5 +655,27 @@ footer a:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fondo oscuro para todas las cuadriculas cuando se hace zoom */
+.productos-active .producto {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para todas las cuadriculas */
+    border-color: transparent; /* Opcional: quita el borde para que no interfiera con el fondo */
+}
+
+/* Para que la imagen se vea con bordes redondeados */
+.zoomable.zoomed {
+    border-radius: 10px; /* Redondear los bordes */
+}
 
 
