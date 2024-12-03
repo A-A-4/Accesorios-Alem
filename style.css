@@ -151,10 +151,10 @@ section p {
     position: relative;
     overflow: hidden;
 }
-.producto p {
+.producto p { 
     font-size: 1rem;
     color: #181818;
-    margin: 5px 0;
+    margin: 1px 1px;
     text-align: center;
 }
 .producto img {
