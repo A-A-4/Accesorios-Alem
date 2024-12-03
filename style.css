@@ -577,7 +577,7 @@ footer a:hover {
     #celulares img, #computadoras img, #otros img {
         width: 100%; /* Asegura que las imágenes se ajusten al 100% del contenedor */
         height: auto; /* Mantiene la proporción correcta */
-        max-height: 200px; /* Reducimos la altura máxima de las imágenes en pantallas más pequeñas */
+        max-height: 250px; /* Reducimos la altura máxima de las imágenes en pantallas más pequeñas */
     }
 }
 
