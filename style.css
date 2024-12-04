@@ -627,7 +627,7 @@ footer a:hover {
     /* Imagen ampliada (pantallas pequeñas - celulares) */
 @media (max-width: 768px) {
     .zoomable.zoomed {
-        max-width: 60vw; /* 80% del ancho del viewport */
+        max-width: 70vw; /* 80% del ancho del viewport */
         max-height: 60vh; /* 80% del alto del viewport */
     }
 }
